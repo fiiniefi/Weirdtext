@@ -12,7 +12,7 @@ def encode(text):
     """
     words = get_words_with_delimiters(text)
     encoded_words = get_coded_words(words, encode_word)
-    return "".join(encoded_words), sorted(re.split('\\W+', text), key=str.lower)
+    return "".join(encoded_words), sorted(re.split(r'\W+', text), key=str.lower)
 
 
 def decode(text, array):
@@ -48,7 +48,7 @@ def decode_word(word, array):
 
 
 def get_words_with_delimiters(text):
-    return re.split('(\\W+)', text)
+    return re.split(r'(\W+)', text)
 
 
 def get_coded_words(words, coder, *args):
