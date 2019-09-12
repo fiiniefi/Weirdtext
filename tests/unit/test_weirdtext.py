@@ -6,7 +6,7 @@ from weirdtext.weirdtext import encode, decode, encode_word, decode_word
 
 @pytest.fixture
 def code_mock(monkeypatch):
-    monkeypatch.setattr(weirdtext.weirdtext, 'get_words_from_text', Mock(['dsa', 'asd']))
+    monkeypatch.setattr(weirdtext.weirdtext, 'get_words_with_delimiters', Mock(['dsa', 'asd']))
     monkeypatch.setattr(weirdtext.weirdtext, 'get_coded_words', Mock(return_value=['asd', 'dsa']))
 
 
