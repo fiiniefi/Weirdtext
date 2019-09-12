@@ -26,7 +26,7 @@ def test_EncodeWord_ReturnsShortWordUntouched(monkeypatch):
 
 @pytest.mark.parametrize('word', ('word', 'module', 'function', 'name', 'interface', 'python'))
 def test_EncodeWord_ShufflesWordCorrectly(monkeypatch, word):
-    monkeypatch.setattr(weirdtext.weirdtext, 'has_one_unique_letter', Mock(return_value=False))
+    monkeypatch.setattr(weirdtext.weirdtext, 'consists_of_one_unique_letter', Mock(return_value=False))
     assert word != encode_word(word)
 
 
